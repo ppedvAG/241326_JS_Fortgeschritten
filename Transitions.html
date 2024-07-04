@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions</title>
+
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: width 1.25s, height 1.25s, background-color 3s;
+        }
+
+        div:hover {
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        }
+
+        #div1 {transition-timing-function: linear;}         /* Gleiche Geschwindigkeit von Anfang bis Ende */
+        #div2 {transition-timing-function: ease;}           /* Langsamer Anfang, danach schnell, um Ende langsamer zu werden */
+        #div3 {transition-timing-function: ease-in;}        /* Langsamen Start */
+        #div4 {transition-timing-function: ease-out;}       /* Langsames Ende*/
+        #div5 {transition-timing-function: ease-in-out;}    /* Langsamen Start / Ende und Mitte */
+    </style>
+
+</head>
+<body>
+    
+    <div id="div1">
+        <p>Beispiel-Text</p>
+    </div>
+
+    <div id="div2">
+        <p>Beispiel-Text</p>
+    </div>
+
+    <div id="div3">
+        <p>Beispiel-Text</p>
+    </div>
+
+    <div id="div4">
+        <p>Beispiel-Text</p>
+    </div>
+
+    <div id="div5">
+        <p>Beispiel-Text</p>
+    </div>
+
+
+
+</body>
+</html>

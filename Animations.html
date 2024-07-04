@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animationen</title>
+    <style>
+
+        #animatedDiv {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            background-color: blue;
+            animation-name: example;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            
+        }
+
+        /* @keyframes example {
+            from {background-color: blue;}
+            to {background-color: purple;}
+        } */
+
+        @keyframes example {
+            0% {background-color: green; left: 0px; top: 0px;}
+            20% {background-color: aqua; left: 200px; top: 0px;}
+            40% {background-color: blueviolet; left: 200px; top: 200px;}
+            60% {background-color: crimson; left: 100px; top: 200px;}
+            80% {background-color: darkcyan; left: 0px; top: 200px;}
+            100% {background-color: firebrick; left: 0px; top: 0px;}
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>CSS Animation</h1>
+    <div id="animatedDiv"></div>
+    <p><b>Hinweis:</b>Wenn diese Animation durchlaufen ist, bleibt er beim vordefinierten Style</p>
+
+
+
+
+    <script>
+
+    //   function changeAnimationDiretion() {
+    //     const animatedDiv = document.getElementById("animatedDiv");
+    //     animatedDiv.style.animationDirection = 'reverse';
+    //   }
+
+    //   // Timer für 5 Sekunden setzen, nach 5 Sekunden ändern wir die Richtung
+    //   setTimeout(changeAnimationDiretion, 5000);
+
+        function abwechselnd() {
+            const animatedDiv = document.getElementById("animatedDiv");
+            if(animatedDiv.style.animationDirection === 'reverse')
+            {
+                animatedDiv.style.animationDirection = "normal";
+            } else {
+                animatedDiv.style.animationDirection = "reverse";
+            }
+        }
+
+        // Timer für 5 Sekunden gesetzt
+        setTimeout(function WechselnDerRichtung() {
+            abwechselnd();
+            // Danach alle 5 Sekunden umschalten
+            setInterval(abwechselnd, 5000);
+        }, 5000)
+
+    </script>
+
+</body>
+</html>

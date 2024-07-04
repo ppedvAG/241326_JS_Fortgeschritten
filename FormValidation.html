@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+
+    <script>
+            /*
+                3 Variablen;
+
+                var     = Funktioniert auf jede Browser Version aufgrund der veraltung
+                let     = Ist das selbe wie Var, bloß ist neuer
+                const   = Ist eine Konstante, der Wert ist nicht veränderbar  
+
+            */
+
+            var a = 5;
+
+            function validateForm() {
+
+                let x = document.forms["myForm"]["fname"].value;
+                if(x == "") {
+                    alert("Name muss gegeben sein!" + a);
+                    return false;
+                }
+            }
+    </script>
+</head>
+<body>
+    <form name="myForm" action="#" method="post" onsubmit="return validateForm()">
+
+        Name: <input type="text" name="fname">
+
+    </form>
+
+
+</body>
+</html>
